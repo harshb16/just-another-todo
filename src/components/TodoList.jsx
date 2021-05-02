@@ -7,7 +7,7 @@ import {
   Spacer,
   Badge,
 } from '@chakra-ui/react';
-import { FaTrash, FaEdit } from 'react-icons/fa';
+import { FaTrash } from 'react-icons/fa';
 
 const TodoList = ({ todos, onDelete, onEdit }) => {
   if (!todos.length)
