@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 import { FaTrash, FaEdit } from 'react-icons/fa';
 
-const TodoList = ({ todos, onDelete }) => {
+const TodoList = ({ todos, onDelete, onEdit }) => {
   if (!todos.length)
     return (
       <Badge
@@ -40,7 +40,6 @@ const TodoList = ({ todos, onDelete }) => {
           <Text>{todo.todo}</Text>
           <Spacer />
           <HStack spacing='3'>
-            <IconButton icon={<FaEdit />} isRound='true' />
             <IconButton
               icon={<FaTrash />}
               isRound='true'
