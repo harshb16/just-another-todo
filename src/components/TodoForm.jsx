@@ -1,8 +1,8 @@
-import { Input, HStack, FormLabel, Button } from '@chakra-ui/react';
+import { Input, HStack, Button } from '@chakra-ui/react';
 
 const TodoForm = () => {
   return (
-    <FormLabel>
+    <form>
       <HStack spacing={4}>
         <Input
           size='lg'
@@ -17,7 +17,7 @@ const TodoForm = () => {
           Add todo
         </Button>
       </HStack>
-    </FormLabel>
+    </form>
   );
 };
 
