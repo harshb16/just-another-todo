@@ -35,7 +35,6 @@ const TodoForm = ({ onAddTodo }) => {
         <Input
           value={content}
           onChange={inputHandler}
-          size='lg'
           colorScheme='teal'
           variant='filled'
           placeholder='Enter new Todo'
@@ -43,7 +42,7 @@ const TodoForm = ({ onAddTodo }) => {
           _active={{ borderColor: 'teal.600' }}
           _focus={{ borderColor: 'teal.600' }}
         />
-        <Button colorScheme='teal' px={8} type='submit' size='lg'>
+        <Button colorScheme='teal' px={8} type='submit'>
           Add todo
         </Button>
       </HStack>
