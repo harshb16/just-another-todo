@@ -6,25 +6,11 @@ import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 
 function App() {
-  const todos = [
-    {
-      id: '1',
-      todo: 'Test1',
-    },
-    {
-      id: '2',
-      todo: 'Test2',
-    },
-    {
-      id: '3',
-      todo: 'Test3',
-    },
-    {
-      id: '4',
-      todo: 'Test4',
-    },
-  ];
-  const [todoItems, setTodoItems] = useState(todos);
+  const [todoItems, setTodoItems] = useState([]);
+
+  const addTodo = (addedTodo) => {
+    setTodoItems((oldTodos) => [...oldTodos, addedTodo]);
+  };
 
   const deleteTodo = (id) => {
     const newTodoItems = todoItems.filter((todo) => todo.id !== id);
@@ -35,7 +21,7 @@ function App() {
     <VStack m={4} p={4} spacing={8}>
       <ColorModeSwitcher alignSelf='flex-end' />
       <Header />
-      <TodoForm />
+      <TodoForm onAddTodo={addTodo} />
       <TodoList todos={todoItems} onDelete={deleteTodo} />
     </VStack>
   );

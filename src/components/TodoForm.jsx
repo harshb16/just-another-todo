@@ -1,10 +1,40 @@
-import { Input, HStack, Button } from '@chakra-ui/react';
+import { useState } from 'react';
+import { Input, HStack, Button, useToast } from '@chakra-ui/react';
+import { nanoid } from 'nanoid';
 
-const TodoForm = () => {
+const TodoForm = ({ onAddTodo }) => {
+  const [content, setContent] = useState('');
+  const toast = useToast();
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    if (!content) {
+      toast({
+        title: 'Cannot add empty todo!',
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      });
+      return;
+    }
+
+    const todo = {
+      id: nanoid(),
+      todo: content,
+    };
+
+    onAddTodo(todo);
+    setContent('');
+  };
+
+  const inputHandler = (event) => setContent(event.target.value);
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <HStack spacing={4}>
         <Input
+          value={content}
+          onChange={inputHandler}
           size='lg'
           colorScheme='teal'
           variant='filled'
