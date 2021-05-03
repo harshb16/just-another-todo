@@ -5,7 +5,7 @@ import Header from './components/Header';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 
-function App() {
+const App = () => {
   const [todoItems, setTodoItems] = useState(
     () => JSON.parse(localStorage.getItem('todoItems')) || []
   );
@@ -31,6 +31,6 @@ function App() {
       <TodoList todos={todoItems} onDeleteTodoItem={deleteTodo} />
     </VStack>
   );
-}
+};
 
 export default App;
