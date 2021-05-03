@@ -28,7 +28,7 @@ function App() {
       <ColorModeSwitcher alignSelf='flex-end' />
       <Header />
       <TodoForm onAddTodo={addTodo} />
-      <TodoList todos={todoItems} onDelete={deleteTodo} />
+      <TodoList todos={todoItems} onDeleteTodoItem={deleteTodo} />
     </VStack>
   );
 }
