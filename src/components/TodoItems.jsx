@@ -7,11 +7,11 @@ const TodoItems = ({ todoItems, onDeleteTodo }) => {
       {todoItems.map((todoItem) => (
         <Box
           borderColor='teal.600'
-          borderWidth='3px'
+          borderWidth='2px'
           m={2}
           px={2}
-          py={1}
-          borderRadius='7px'
+          py={0.5}
+          borderRadius='5px'
           key={todoItem.id}
         >
           <TodoItem onDelete={onDeleteTodo} todo={todoItem} />
