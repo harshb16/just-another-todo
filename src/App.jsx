@@ -15,7 +15,7 @@ function App() {
   }, [todoItems]);
 
   const addTodo = (addedTodo) => {
-    setTodoItems((oldTodos) => [...oldTodos, addedTodo]);
+    setTodoItems((oldTodos) => [addedTodo, ...oldTodos]);
   };
 
   const deleteTodo = (id) => {
@@ -23,18 +23,12 @@ function App() {
     setTodoItems(newTodoItems);
   };
 
-  // const editTodo = (id) => {};
-
   return (
     <VStack m={4} p={4} spacing={8}>
       <ColorModeSwitcher alignSelf='flex-end' />
       <Header />
       <TodoForm onAddTodo={addTodo} />
-      <TodoList
-        todos={todoItems}
-        onDeleteTodoItem={deleteTodo}
-        // onEditTodoItem={editTodo}
-      />
+      <TodoList todos={todoItems} onDeleteTodoItem={deleteTodo} />
     </VStack>
   );
 }
