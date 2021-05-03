@@ -8,7 +8,7 @@ const TodoForm = ({ onAddTodo }) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    if (!content) {
+    if (!content.trim()) {
       toast({
         title: 'Cannot add empty todo!',
         status: 'error',
