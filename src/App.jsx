@@ -23,12 +23,20 @@ function App() {
     setTodoItems(newTodoItems);
   };
 
+  const editTodo = (id) => {
+    console.log(todoItems);
+  };
+
   return (
     <VStack m={4} p={4} spacing={8}>
       <ColorModeSwitcher alignSelf='flex-end' />
       <Header />
       <TodoForm onAddTodo={addTodo} />
-      <TodoList todos={todoItems} onDeleteTodoItem={deleteTodo} />
+      <TodoList
+        todos={todoItems}
+        onDeleteTodoItem={deleteTodo}
+        onEditTodoItem={editTodo}
+      />
     </VStack>
   );
 }

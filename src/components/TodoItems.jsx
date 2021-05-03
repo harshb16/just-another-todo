@@ -1,7 +1,7 @@
 import TodoItem from './TodoItem';
 import { Box } from '@chakra-ui/react';
 
-const TodoItems = ({ todoItems, onDeleteTodo }) => {
+const TodoItems = ({ todoItems, onDeleteTodo, onEditTodo }) => {
   return (
     <>
       {todoItems.map((todoItem) => (
@@ -13,7 +13,11 @@ const TodoItems = ({ todoItems, onDeleteTodo }) => {
           py={1}
           borderRadius='7px'
         >
-          <TodoItem onDelete={onDeleteTodo} todo={todoItem} />
+          <TodoItem
+            onDelete={onDeleteTodo}
+            onEdit={onEditTodo}
+            todo={todoItem}
+          />
         </Box>
       ))}
     </>

@@ -2,7 +2,7 @@ import { Flex } from '@chakra-ui/react';
 import NoTodos from './NoTodos';
 import TodoItems from './TodoItems';
 
-const TodoList = ({ todos, onDeleteTodoItem }) => {
+const TodoList = ({ todos, onDeleteTodoItem, onEditTodoItem }) => {
   if (!todos.length) return <NoTodos />;
 
   return (
@@ -14,7 +14,11 @@ const TodoList = ({ todos, onDeleteTodoItem }) => {
       maxWidth={{ base: '90vw', sm: '80vw', lg: '50vw', xl: '40vw' }}
       alignItems='stretch'
     >
-      <TodoItems onDeleteTodo={onDeleteTodoItem} todoItems={todos} />
+      <TodoItems
+        onDeleteTodo={onDeleteTodoItem}
+        onEditTodo={onEditTodoItem}
+        todoItems={todos}
+      />
     </Flex>
   );
 };
