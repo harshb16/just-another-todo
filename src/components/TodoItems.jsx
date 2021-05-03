@@ -12,6 +12,7 @@ const TodoItems = ({ todoItems, onDeleteTodo, onEditTodo }) => {
           px={2}
           py={1}
           borderRadius='7px'
+          key={todoItem.id}
         >
           <TodoItem
             onDelete={onDeleteTodo}
