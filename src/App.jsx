@@ -23,9 +23,7 @@ function App() {
     setTodoItems(newTodoItems);
   };
 
-  const editTodo = (id) => {
-    console.log(todoItems);
-  };
+  // const editTodo = (id) => {};
 
   return (
     <VStack m={4} p={4} spacing={8}>
@@ -35,7 +33,7 @@ function App() {
       <TodoList
         todos={todoItems}
         onDeleteTodoItem={deleteTodo}
-        onEditTodoItem={editTodo}
+        // onEditTodoItem={editTodo}
       />
     </VStack>
   );
