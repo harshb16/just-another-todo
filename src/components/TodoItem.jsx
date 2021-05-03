@@ -1,10 +1,31 @@
 import { useState } from 'react';
-import { HStack, IconButton, Input, Spacer, Text } from '@chakra-ui/react';
+import {
+  HStack,
+  IconButton,
+  Input,
+  Spacer,
+  Text,
+  useToast,
+} from '@chakra-ui/react';
 import { FaTrash, FaEdit, FaCheck } from 'react-icons/fa';
 
 const TodoItem = ({ todo, onDelete }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [item, setItem] = useState(todo.todo);
+  const toast = useToast();
+
+  const editCheckAndSubmit = () => {
+    if (!item.length) {
+      toast({
+        title: 'Cannot add empty todo!',
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      });
+      return;
+    }
+    setIsEditing(false);
+  };
 
   return (
     <HStack key={todo.id} m={2}>
@@ -22,7 +43,7 @@ const TodoItem = ({ todo, onDelete }) => {
           <IconButton
             icon={<FaCheck />}
             isRound='true'
-            onClick={() => setIsEditing(false)}
+            onClick={editCheckAndSubmit}
           />
         </>
       )}
