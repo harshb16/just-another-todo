@@ -20,7 +20,7 @@ const TodoForm = ({ onAddTodo }) => {
 
     const todo = {
       id: nanoid(),
-      todo: content,
+      todo: content.trim(),
     };
 
     onAddTodo(todo);

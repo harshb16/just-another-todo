@@ -24,6 +24,7 @@ const TodoItem = ({ todo, onDelete }) => {
       });
       return;
     }
+    setItem(item.trim());
     setIsEditing(false);
   };
 
