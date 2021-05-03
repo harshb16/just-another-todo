@@ -15,7 +15,7 @@ export const ColorModeSwitcher = (props) => {
       mr={2}
       mt={2}
       onClick={toggleColorMode}
-      icon={colorMode === 'light' ? <FaSun /> : <FaMoon />}
+      icon={colorMode === 'light' ? <FaMoon /> : <FaSun />}
       isRound='true'
       {...props}
     />
